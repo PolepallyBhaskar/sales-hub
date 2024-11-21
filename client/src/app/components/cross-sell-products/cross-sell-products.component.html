@@ -1,0 +1,13 @@
+<div class="cross-sell-container">
+    <h2>Cross-Sell Products</h2>
+    <p-grid style="display: flex !important;" [gutter]="true">
+        <div *ngFor="let product of products" class="p-col-12 p-md-6 p-lg-3">
+            <p-card>
+                <div class="product-card">
+                    <h3>{{ product.name }}</h3>
+                    <p>Price: ${{ product.price }}</p>
+                </div>
+            </p-card>
+        </div>
+    </p-grid>
+</div>

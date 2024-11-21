@@ -1,0 +1,24 @@
+<p-menubar [model]="items">
+    <!-- Template for individual menu items -->
+    <ng-template pTemplate="item" let-item let-root="root">
+        <a pRipple class="flex align-items-center p-menuitem-link" [href]="item.url ? item.url : '#'">
+            <span [class]="item.icon"></span>
+            <span class="ml-2">{{ item.label }}</span>
+        </a>
+    </ng-template>
+
+    <!-- Adding search input with icon and shopping cart at the end -->
+    <ng-template pTemplate="end">
+        <div class=" align-items-center gap-2" style="display: inline-flex !important;">
+            <!-- Search input with an embedded icon -->
+            <div class="p-input-icon-left w-8rem sm:w-auto">
+                <i class="pi pi-search"></i>
+                <input type="text" pInputText placeholder="Search" />
+            </div>
+            <!-- Shopping cart icon -->
+            <a href="#" class="p-menuitem-link">
+                <span class="pi pi-shopping-cart"></span>
+            </a>
+        </div>
+    </ng-template>
+</p-menubar>

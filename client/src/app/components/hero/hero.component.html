@@ -1,0 +1,11 @@
+<!-- hero.component.html -->
+<p-carousel [value]="images" [numVisible]="1" [autoPlay]="true" [interval]="500" [circular]="true" [responsive]="true">
+    <ng-template pTemplate="item" let-image>
+        <div class="carousel-item">
+            <img [src]="image.src" alt="Image" />
+            <div class="carousel-caption">
+                <h2>{{ image.title }}</h2>
+            </div>
+        </div>
+    </ng-template>
+</p-carousel>

@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS sales_orders (
+    id SERIAL PRIMARY KEY,
+    customer_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    mobile_number VARCHAR(15),
+    status VARCHAR(50),
+    order_date DATE DEFAULT CURRENT_DATE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    product_id INT NOT NULL REFERENCES products(id) ON DELETE CASCADE
+);
