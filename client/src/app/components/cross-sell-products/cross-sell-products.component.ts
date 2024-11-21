@@ -40,7 +40,6 @@ export class CrossSellProductsComponent implements OnInit {
   }
   loadOrders() {
     this.orderService.getCrossSellProducts().subscribe(orders => {
-      console.log(" this.orders", this.orders)
       this.orders = orders;
     });
   }
@@ -53,7 +52,6 @@ export class CrossSellProductsComponent implements OnInit {
 
       // Call the order service to create the order
       this.orderService.createOrder(orderData).subscribe(response => {
-        console.log('Order Created:', response);
         this.displayOrderForm = false; // Close the form
         this.orderForm.reset(); // Reset the form
         this.loadOrders()

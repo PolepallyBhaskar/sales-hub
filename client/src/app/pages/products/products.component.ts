@@ -24,7 +24,6 @@ export class ProductsComponent implements OnInit {
   }
   onEdit(product: Product): void {
     this.selectedProduct = { ...product }; // Open form with product data
-    console.log(" this.selectedProduct", this.selectedProduct)
     this.displayModal = true; // Open the modal
 
   }

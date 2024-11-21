@@ -29,7 +29,6 @@ export class CreateProductComponent implements OnInit, OnChanges {
         });
     }
     ngOnInit(): void {
-        console.log("product", this.product)
         if (this.product) {
             this.productForm.patchValue(this.product); // Pre-fill form for editing
         }
@@ -43,7 +42,6 @@ export class CreateProductComponent implements OnInit, OnChanges {
     onSubmit(): void {
         if (this.productForm.valid) {
             const productData = this.productForm.value;
-            console.log("productData", productData)
             if (this.product && this.product.id) {
                 // Update product
                 this.productService
@@ -61,9 +59,6 @@ export class CreateProductComponent implements OnInit, OnChanges {
                 });
             }
         }
-        // if (this.productForm.valid) {
-        //     console.log('Product Created:', this.productForm.value);
-        //     this.formSubmit.emit(); // Emit event to notify parent
-        // }
+
     }
 }
