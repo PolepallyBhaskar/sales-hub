@@ -1,0 +1,47 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input pInputText id="name" formControlName="name" placeholder="Enter product name" />
+        <small *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched" class="p-error">
+            Product name is required and should have at least 3 characters.
+        </small>
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea pInputTextarea id="description" formControlName="description" rows="3"
+            placeholder="Enter product description"></textarea>
+        <small *ngIf="productForm.get('description')?.invalid && productForm.get('description')?.touched"
+            class="p-error">
+            Description is required.
+        </small>
+    </div>
+
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input pInputNumber id="price" formControlName="price" placeholder="Enter product price" />
+        <small *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched" class="p-error">
+            Price is required and must be greater than 0.
+        </small>
+    </div>
+
+    <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input pInputNumber id="quantity" formControlName="quantity" placeholder="Enter quantity" />
+        <small *ngIf="productForm.get('quantity')?.invalid && productForm.get('quantity')?.touched" class="p-error">
+            Quantity is required and must be greater than 0.
+        </small>
+    </div>
+
+    <div class="form-group">
+        <label for="category">Category</label>
+        <p-dropdown formControlName="category" [options]="categories" optionLabel="label"
+            placeholder="Select a category"></p-dropdown>
+        <small *ngIf="productForm.get('category')?.invalid && productForm.get('category')?.touched" class="p-error">
+            Category is required.
+        </small>
+    </div>
+
+    <button pButton type="submit" [disabled]="productForm.invalid">
+        Submit
+    </button>
+</form>

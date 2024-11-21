@@ -1,1 +1,45 @@
-<p>products works!</p>
+<div>
+    <button pButton class="p-button p-button-primary p-button-sm mb-3" (click)="onCreate()"> <i class="pi pi-plus "
+            style="margin-right: 8px;"></i> Create Product</button>
+
+    <!-- PrimeNG Dialog for Create Product Form -->
+    <p-dialog [(visible)]="displayModal" header="Create New Product" [modal]="true" [closable]="true"
+        [style]="{ width: '500px' }">
+        <app-create-product [product]="selectedProduct" (formSubmit)="onFormSubmit()"></app-create-product>
+    </p-dialog>
+
+    <!-- Products List Table -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.price | currency }}</td>
+                <td>{{ product.quantity }}</td>
+                <td>{{ product.created_at | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                <td>{{ product.updated_at | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+
+                <td>
+                    <button pButton class="p-button p-button-success p-button-sm" (click)="onEdit(product)"> <i
+                            class="pi pi-pencil" style="margin-right: 8px;"></i> Edit</button>&nbsp;
+                    <button pButton class="p-button p-button-danger p-button-sm" (click)="onDelete(product.id!)">
+                        <i class="pi pi-trash" style="margin-right: 8px;"></i>
+                        Delete
+                    </button>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

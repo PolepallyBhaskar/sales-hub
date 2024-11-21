@@ -3,8 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const productsRoutes = require('./routes/productsRoutes');
-const ordersRoutes = require('./routes/salesOrderRoutes');
+const productsRoutes = require('./routes/products');
+const ordersRoutes = require('./routes/salesOrder');
 
 app.use(cors());
 app.use(bodyParser.json());

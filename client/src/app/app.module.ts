@@ -15,14 +15,19 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CarouselModule } from 'primeng/carousel';
 import { ToolbarModule } from 'primeng/toolbar';
-import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { MenubarModule } from 'primeng/menubar';
 import { BadgeModule } from 'primeng/badge';
 import { AvatarModule } from 'primeng/avatar';
-import { InputTextModule } from 'primeng/inputtext';
 import { CommonModule } from '@angular/common';
 import { RippleModule } from 'primeng/ripple';
+import { CreateProductComponent } from './pages/products/create-product/create-product.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { DropdownModule } from 'primeng/dropdown';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +37,7 @@ import { RippleModule } from 'primeng/ripple';
     CrossSellProductsComponent,
     HomeComponent,
     ProductsComponent,
+    CreateProductComponent,
     AboutComponent,
     ContactComponent,
   ],
@@ -43,13 +49,18 @@ import { RippleModule } from 'primeng/ripple';
     CarouselModule,
     ToolbarModule,
     InputTextModule,
+    DropdownModule,
+    InputNumberModule,
+    DialogModule,
     ButtonModule,
     CardModule,
     MenubarModule,
     BadgeModule,
     AvatarModule,
     RippleModule,
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule, // <-- Add this
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

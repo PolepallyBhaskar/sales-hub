@@ -1,13 +1,69 @@
 <div class="cross-sell-container">
     <h2>Cross-Sell Products</h2>
-    <p-grid style="display: flex !important;" [gutter]="true">
+    <p-grid style="display: flex !important; justify-content: center !important;" [gutter]="true">
         <div *ngFor="let product of products" class="p-col-12 p-md-6 p-lg-3">
             <p-card>
                 <div class="product-card">
                     <h3>{{ product.name }}</h3>
                     <p>Price: ${{ product.price }}</p>
+                    <!-- Button to trigger the order form -->
+                    <button pButton label="Create Order" class="p-button p-button-success p-button-sm"
+                        (click)="onCreateOrder(product)">
+                    </button>
                 </div>
             </p-card>
         </div>
     </p-grid>
 </div>
+
+<div class="cross-sell-container">
+    <h2>Orders Placed</h2>
+    <p-grid style="display: flex !important; justify-content: center !important;" [gutter]="true">
+        <div *ngFor="let order of orders" class="p-col-12 p-md-6 p-lg-3">
+            <p-card>
+                <div class="order-card">
+                    <h3>{{ order.product_name }}</h3>
+                    <p>Price: ${{ order.product_price }}</p>
+                    <p>Status: {{ order.status }}</p>
+                    <p>Order Date: {{ order.customer_name }}</p>
+                    <p>Customer Name: {{ order.status }}</p>
+                    <p>Customer Email: {{ order.email }}</p>
+                    <p>Customer Number: {{ order.mobile_number }}</p>
+
+
+
+
+                </div>
+            </p-card>
+        </div>
+    </p-grid>
+</div>
+<!-- Order Form Modal -->
+<p-dialog [(visible)]="displayOrderForm" header="Create Order" [modal]="true" [closable]="true"
+    [style]="{ width: '400px' }">
+    <form [formGroup]="orderForm" (ngSubmit)="onSubmitOrder()">
+        <div class="p-field">
+            <label for="customer_name">Customer Name</label>
+            <input id="customer_name" formControlName="customer_name" pInputText />
+        </div>
+        <div class="p-field">
+            <label for="email">Email</label>
+            <input id="email" formControlName="email" type="email" pInputText />
+        </div>
+        <div class="p-field">
+            <label for="mobile_number">Mobile Number</label>
+            <input id="mobile_number" formControlName="mobile_number" pInputText />
+        </div>
+        <div class="p-field">
+            <label for="status">Order Status</label>
+            <input id="status" formControlName="status" pInputText value="Pending" readonly />
+        </div>
+        <div class="p-field">
+            <label for="order_date">Order Date</label>
+            <input id="order_date" formControlName="order_date" type="date" pInputText />
+        </div>
+        <div class="p-field">
+            <button pButton label="Submit Order" type="submit" [disabled]="orderForm.invalid"></button>
+        </div>
+    </form>
+</p-dialog>
