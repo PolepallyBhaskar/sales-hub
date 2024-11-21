@@ -1,0 +1,33 @@
+/* Align labels to the right */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Align the input fields to the right */
+input,
+textarea,
+select {
+  width: 100%;
+}
+
+/* Add padding and margin for better spacing */
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style the submit button */
+button {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* Style validation error messages */
+.p-error {
+  font-size: 0.875rem;
+  color: #f44336; /* Red color for error */
+  margin-top: 0.2rem;
+}

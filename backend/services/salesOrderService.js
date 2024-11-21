@@ -1,6 +1,5 @@
 const dbHelper = require('../helpers/dbHelper');
-const pushOrderToThirdParty = require('../services/thirdPartyService');
-
+const { pushOrderToThirdParty } = require('../services/thirdPartyService');
 
 /**
  * Create a new sales order with a linked product.
@@ -23,6 +22,7 @@ const createOrder = async (data) => {
     const result = await dbHelper.executeQuery(query, params);
     await pushOrderToThirdParty(result[0])
     return result[0]; // Return the first result
+
 };
 
 /**

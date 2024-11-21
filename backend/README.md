@@ -1,26 +1,37 @@
 # B2B Sales Management Application
 
-This repository contains the backend implementation for a Sales Management System using Node.js and PostgreSQL.
+This repository contains the backend implementation of a **B2B Sales Management System**, designed to streamline the management of products, sales orders, and related operations. The backend is built using **Node.js** and **PostgreSQL**, offering robust CRUD functionality, dynamic filtering, and API integrations.
 
 ---
 
 ## Features
 
-- CRUD operations for products and sales orders.
-- Attach products to sales orders.
-- Dynamic filtering and searching for sales orders.
-- Integration with a third-party API for order details.
-- PostgreSQL database connection and initialization.
+### Core Functionalities:
+
+- **CRUD Operations**: Manage products and sales orders effortlessly.
+- **Order Management**: Attach multiple products to sales orders.
+- **Dynamic Filtering**: Search and filter sales orders based on customizable criteria.
+- **API Integration**: Fetch external order details using a third-party API.
+
+### Technical Highlights:
+
+- **PostgreSQL Integration**: Provides a reliable and scalable database connection.
+- **Dynamic Querying**: Optimized queries for better performance.
+- **Node.js Backend**: Built for speed and maintainability.
 
 ---
 
 ## Getting Started
 
+Follow the steps below to set up the application on your local system.
+
 ### Prerequisites
 
-- **Node.js** (v14 or later)
-- **PostgreSQL** (v12 or later)
-- **Git**
+Ensure the following are installed on your system:
+
+- **Node.js** (v14 or later) - [Download Node.js](https://nodejs.org)
+- **PostgreSQL** (v12 or later) - [Download PostgreSQL](https://www.postgresql.org/download/)
+- **Git** - [Download Git](https://git-scm.com)
 
 ### Installation Steps
 
@@ -29,6 +40,13 @@ This repository contains the backend implementation for a Sales Management Syste
    git clone https://github.com/PolepallyBhaskar/sales-hub.git
    cd sales-hub/backend
    ```
+
+## Installation Steps
+
+### 2. Install Dependencies:
+
+```bash
+npm install
 
 Use npm start to run server
 
@@ -43,3 +61,4 @@ psql -U postgres -h localhost -d postgres
 sudo -u postgres psql
 ALTER USER postgres PASSWORD 'database@123';
 psql -U postgres -h localhost -d postgres
+```

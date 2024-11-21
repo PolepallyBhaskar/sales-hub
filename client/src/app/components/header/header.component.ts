@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
       {
         label: 'Home',
         icon: 'pi pi-home',
-        url: '', // Add hyperlink if needed
+        url: '/home', // Add hyperlink if needed
       },
       {
         label: 'Products',
