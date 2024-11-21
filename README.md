@@ -11,6 +11,10 @@ To make it easier for you to understand and set up both parts of the project, we
 
 Please refer to the respective files for detailed setup and instructions.
 
+## Screenshots & Videos
+
+For better understanding and visual guidance, we have attached relevant **screenshots** and **videos** for both the frontend and backend in the `screenshots-videos` folder. This folder contains step-by-step visuals to assist you in navigating and using the application.
+
 ---
 
 ## License
